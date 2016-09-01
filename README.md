@@ -18,6 +18,7 @@ Gulp is the one that will run all the compilation, watchers and others tasks. Bo
 ## Install
 In order to start using the project you need to clone it to your pc. You can download the the zip version from [here](#) or clone the project with the git command.
 ```
+git clone -b Gulp-Starter-Kit --single-branch https://github.com/mriverodorta/DevTips-Starter-Kit.git project-name
 git clone https://blablabla.github.com new-project
 ```
 After you have it on you pc, you need to go in the console to the project folder and execute the following command to gather all the dependencies.
