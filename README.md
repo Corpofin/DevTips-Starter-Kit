@@ -35,7 +35,7 @@ Every command have to be executed on the root directory of the project using the
 * **start**: Compile and watch for changes (For development)
 * **clean**: Removes all the compiled files on ./build
 * **js**: Compile the JavaScript files
-* **jade**: Compile the Jade templates
+* **pug**: Compile the Pug templates
 * **sass**: Compile the Sass styles
 * **images**: Copy the newer to the build folder
 * **favicon**: Copy the favicon to the build folder
@@ -53,7 +53,7 @@ The project have a very simple and flexible structure. If the default place for 
 ```
 ├───build -> All the compiled files will be placed here (Distribuction)
 │   ├───assets -> Compiled Assets
-│   ├───index.html -> Compiled Jade files
+│   ├───index.html -> Compiled Pug files
 │   ├───vendors -> Project dependencies
 ├───source -> Source files for the project
 │   ├───assets -> Assets for the project
@@ -62,8 +62,8 @@ The project have a very simple and flexible structure. If the default place for 
 │   ├───sass  -> Sass styles
 │   │   └───main.sass -> Main file in where all other sass files should be included.
 │   ├───vendors -> Vendors folder for all the dependencies (Managed by Bower)
-│   └───views -> Templates directory for Jade files
-│   │   └───index.jade
+│   └───views -> Templates directory for Pug files
+│   │   └───index.pug
 ├───.bowerrc -> Define where the dependencies will be installed
 ├───bower.json -> Bower configuration file for manage project dependencies
 ├───package.json -> NodeJS configuration file for manage node dependencies
