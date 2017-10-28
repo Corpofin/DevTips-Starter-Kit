@@ -7,10 +7,10 @@ Visit [DevTipsStarterKit.com](http://devtipsstarterkit.com) for more info.
 ![Watch the video on youtube](https://github.com/DevTips/DevTips-Starter-Kit/blob/master/assets/img/starter-kit-cover.jpg?raw=true)
 
 ## Requeriments
-This project have some requeriments you need to meet in order to compile it. First of all, you need NodeJS in order to run javascript on the console, you can go to the [NodeJS](http://nodejs.rg) site and follow trough the installation process. After you get the `node` command on the console, you need to install Gulp and Bower globally with the following command.
+This project have some requeriments you need to meet in order to compile it. First of all, you need NodeJS in order to run javascript on the console, you can go to the [NodeJS](http://nodejs.rg) site and follow trough the installation process. After you get the `node` command on the console you will have the node package manager `npm` as well. Now you need to install Gulp and Bower globally with the following command.
 
 ```
-node install -g gulp bower
+npm install -g gulp bower
 ```
 
 Gulp is the one that will run all the compilation, watchers and others tasks. Bower will get the dependencies for the client side like jQuery. Those are the only requeriments to run this project.
