@@ -12,7 +12,7 @@ var config = require('./config.js')();
 
 // Configs
 var
-  devBuild = (( config.environment || process.env.NODE_ENV || 'development').trim().toLowerCase() !== 'production'),
+  devBuild = ((config.environment || process.env.NODE_ENV || 'development').trim().toLowerCase() !== 'production'),
   source = config.source[--config.source.length] == '/' ? config.source : config.source + '/',
   dest = config.build[--config.build.length] == '/' ? config.build : config.build + '/',
   pkg = require('./package.json'),
@@ -27,7 +27,7 @@ var
   },
   styles = {
     in: source + config.sass,
-    watch: [source + config.sass.substring(0, (config.sass.lastIndexOf('/')+1)) + '**/*'],
+    watch: [source + config.sass.substring(0, (config.sass.lastIndexOf('/') + 1)) + '**/*'],
     out: dest + (config.css[--config.css.length] == '/' ? config.css : config.css + '/'),
     sassOpt: {
       outputStyle: config.sassOptions.outputStyle || 'expanded',
@@ -107,7 +107,7 @@ gulp.task('js', function () {
 
 // Update images on build folder
 gulp.task('images', function () {
-  return gulp.src( images.in )
+  return gulp.src(images.in)
     .pipe($.newer(images.out))
     .pipe(gulp.dest(images.out));
 });
@@ -130,19 +130,11 @@ gulp.task('vendors', function () {
 gulp.task('pug', function () {
   log('-> Compiling Pug Templates')
 
-  var templates = gulp.src(views.in)
+  return gulp.src(views.in)
     .pipe($.plumber())
-    .pipe($.newer(views.out));
-  if (!devBuild) {
-    log('-> Compressing templates for Production')
-    templates = templates
-      .pipe($.size({ title: 'pug Templates Before Compression' }))
-      .pipe($.pug())
-      .pipe($.size({ title: 'pug Templates After Compression' }));
-  } else {
-    templates.pipe($.pug(pugOptions));
-  }
-  return templates.pipe(gulp.dest(views.out));
+    .pipe($.newer(views.out))
+    .pipe($.pug(pugOptions))
+    .pipe(gulp.dest(views.out));
 });
 
 // Compile Sass styles
@@ -213,7 +205,7 @@ gulp.task('default', ['help']);
 /**
  * Custom functions
  */
- function log(msg) {
-   console.log(msg);
+function log(msg) {
+  console.log(msg);
 }
 
